@@ -44,7 +44,7 @@ interface ComponentTestRenderOptions extends Omit<RenderOptions, 'wrapper'> {
   testContainer?: TestContainerSetup;
 }
 
-interface ComponentTestRenderResult extends RenderResult {
+interface ComponentTestRenderResult extends Omit<RenderResult, 'rerender'> {
   testContainer: TestContainerSetup;
   rerender: (ui: React.ReactElement) => void;
 }

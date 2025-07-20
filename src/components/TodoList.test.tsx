@@ -397,9 +397,9 @@ describe('TodoList Integration Tests', () => {
       customContainer.container.bind(TYPES.LoggingService).toConstantValue(customLogger);
       
       // Recreate the store with the new logger
-      const newStore = customContainer.container.get(TYPES.LoggingService);
+      const newLogger = customContainer.container.get(TYPES.LoggingService);
       const { createTodoStore } = await import('../stores/todoStore');
-      const freshStore = createTodoStore(newStore);
+      const freshStore = createTodoStore(newLogger as any);
       customContainer.container.rebind(TYPES.TodoStore).toConstantValue(freshStore);
       
       const user = userEvent.setup();

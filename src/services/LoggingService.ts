@@ -1,6 +1,6 @@
 import { injectable } from 'inversify';
 
-type LogData = Record<string, unknown> | string | number | boolean | null | undefined;
+export type LogData = Record<string, unknown> | string | number | boolean | null | undefined;
 
 export interface ILoggingService {
   info(message: string, data?: LogData): void;
